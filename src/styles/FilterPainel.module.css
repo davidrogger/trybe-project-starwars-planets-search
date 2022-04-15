@@ -1,0 +1,4 @@
+.painel__container {
+  background-color: var(--main-color);
+  height: 100px;
+}
