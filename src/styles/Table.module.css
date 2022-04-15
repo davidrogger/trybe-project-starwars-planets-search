@@ -1,0 +1,9 @@
+.table__container {
+  background-color: var(--main-color);
+  width: 100%;
+}
+
+.table__container thead {
+  background-color: black;
+  height: 50px;
+}
