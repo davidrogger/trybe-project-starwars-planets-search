@@ -1,10 +1,13 @@
 import React from 'react';
 import Header from './components/Header';
+import { StarwarsProvider } from './context/StarwarsProvider';
 
 function App() {
   return (
     <main>
-      <Header />
+      <StarwarsProvider>
+        <Header />
+      </StarwarsProvider>
     </main>
   );
 }

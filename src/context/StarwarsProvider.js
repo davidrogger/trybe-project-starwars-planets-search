@@ -1,13 +1,25 @@
-import React, { createContext } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import getStarWarsAPI from '../services/starwarsAPI';
 
 const Context = createContext();
 
 const { Provider } = Context;
 
 function StarwarsProvider({ children }) {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const getStarwarsPlanets = async () => {
+      const { results } = await getStarWarsAPI('planets');
+      setData(results);
+    };
+    getStarwarsPlanets();
+  }, []);
+
+  const contextValue = { data };
   return (
-    <Provider>
+    <Provider value={ contextValue }>
       { children }
     </Provider>
   );
