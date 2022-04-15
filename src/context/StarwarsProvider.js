@@ -8,6 +8,8 @@ const { Provider } = Context;
 
 function StarwarsProvider({ children }) {
   const [data, setData] = useState([]);
+  const [filterByName, setFilterByName] = useState('');
+  const [filterResult, setfilterResult] = useState([]);
 
   useEffect(() => {
     const getStarwarsPlanets = async () => {
@@ -17,7 +19,14 @@ function StarwarsProvider({ children }) {
     getStarwarsPlanets();
   }, []);
 
-  const contextValue = { data };
+  useEffect(() => {
+    const filterDisable = filterByName.length === 0;
+    if (filterDisable) setfilterResult(data);
+    const filtered = data.filter(({ name }) => name.contains(filterByName));
+    setfilterResult(filtered);
+  }, [filterByName]);
+
+  const contextValue = { data, filterResult, setFilterByName };
   return (
     <Provider value={ contextValue }>
       { children }
