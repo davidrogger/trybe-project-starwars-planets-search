@@ -1,5 +1,6 @@
 .table__container {
   background-color: var(--main-color);
+  font-size: 0.875rem;
   width: 100%;
 }
 
