@@ -1,0 +1,19 @@
+/* global css & default */
+:root {
+
+  --main-color: #1e1e1e;
+
+  --secondary-color: #f8f8f8;
+
+  --accent-color: #dfdf04;
+}
+
+::selection {
+  background-color: #dfdf04;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
