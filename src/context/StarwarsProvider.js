@@ -14,7 +14,7 @@ function StarwarsProvider({ children }) {
 }
 
 StarwarsProvider.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node, // https://stackoverflow.com/questions/42122522/reactjs-what-should-the-proptypes-be-for-this-props-children
 }.isRequired;
 
 export { StarwarsProvider, Context };
