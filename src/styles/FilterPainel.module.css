@@ -13,8 +13,9 @@
 
 .input__filter {
   background-color: var(--main-color);
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--secondary-color);
   border-radius: 5px;
+  color: var(--secondary-color);
   height: 40px;
   text-align: center;
 }
