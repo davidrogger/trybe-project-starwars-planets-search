@@ -1,10 +1,10 @@
 import React from 'react';
-import InputSelect from './InputSelect';
+import InputSelectColumn from './InputSelectColumn';
 
 function FilterByNumericValues() {
   return (
     <div>
-      <InputSelect />
+      <InputSelectColumn />
     </div>
   );
 }

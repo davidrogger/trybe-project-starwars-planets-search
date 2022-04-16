@@ -8,7 +8,7 @@ const OPTIONS = [
   'surface_water',
 ];
 
-function InputSelect() {
+function InputSelectColumn() {
   return (
     <select
       data-testid="column-filter"
@@ -25,4 +25,4 @@ function InputSelect() {
   );
 }
 
-export default InputSelect;
+export default InputSelectColumn;
