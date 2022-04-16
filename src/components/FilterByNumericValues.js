@@ -1,10 +1,11 @@
 import React from 'react';
+import InputSelect from './InputSelect';
 
 function FilterByNumericValues() {
   return (
-    <select>
-      <option>teste</option>
-    </select>
+    <div>
+      <InputSelect />
+    </div>
   );
 }
 
