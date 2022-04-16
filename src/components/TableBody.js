@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Context } from '../context/StarwarsProvider';
 
 function TableBody() {
-  const { data } = useContext(Context);
+  const { filterResult } = useContext(Context);
 
   function filmes(name, filmeList) {
     return (
@@ -16,7 +16,7 @@ function TableBody() {
 
   return (
     <tbody>
-      { data.map(({
+      { filterResult.map(({
         name,
         rotation_period: rotation,
         orbital_period: orbital,

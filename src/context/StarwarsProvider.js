@@ -15,16 +15,22 @@ function StarwarsProvider({ children }) {
     const getStarwarsPlanets = async () => {
       const { results } = await getStarWarsAPI('planets');
       setData(results);
+      setfilterResult(results);
     };
     getStarwarsPlanets();
   }, []);
 
   useEffect(() => {
     const filterDisable = filterByName.length === 0;
-    if (filterDisable) setfilterResult(data);
-    const filtered = data.filter(({ name }) => name.contains(filterByName));
-    setfilterResult(filtered);
-  }, [filterByName]);
+    const applyFilter = data
+      .filter(({ name }) => name
+        .toLowerCase()
+        .includes(filterByName));
+
+    const result = filterDisable ? data : applyFilter;
+
+    setfilterResult(result);
+  }, [data, filterByName]);
 
   const contextValue = { data, filterResult, setFilterByName };
   return (
