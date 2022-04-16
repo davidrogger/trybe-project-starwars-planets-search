@@ -6,10 +6,17 @@ const Context = createContext();
 
 const { Provider } = Context;
 
+const InitialNumericValue = {
+  column: 'population',
+  comparison: 'maior que',
+  value: '0',
+};
+
 function StarwarsProvider({ children }) {
   const [data, setData] = useState([]);
   const [filterByName, setFilterByName] = useState('');
   const [filterResult, setfilterResult] = useState([]);
+  const [filterByNumericValue, setFilterByNumericValue] = useState(InitialNumericValue);
 
   useEffect(() => {
     const getStarwarsPlanets = async () => {
@@ -32,7 +39,14 @@ function StarwarsProvider({ children }) {
     setfilterResult(result);
   }, [data, filterByName]);
 
-  const contextValue = { data, filterResult, setFilterByName };
+  const contextValue = {
+    data,
+    filterResult,
+    setFilterByName,
+    filterByNumericValue,
+    setFilterByNumericValue,
+  };
+
   return (
     <Provider value={ contextValue }>
       { children }
