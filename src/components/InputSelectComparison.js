@@ -9,7 +9,7 @@ const OPTIONS = [
 function InputSelectComparison() {
   return (
     <select
-      data-testid="column-filter"
+      data-testid="comparison-filter"
     >
       { OPTIONS.map((option) => (
         <option
