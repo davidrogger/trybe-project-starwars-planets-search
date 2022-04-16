@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Context } from '../context/StarwarsProvider';
 import styles from '../styles/FilterPainel.module.css';
 
-function InputFilter() {
+function FilterByName() {
   const { setFilterByName } = useContext(Context);
   return (
     <input
@@ -15,4 +15,4 @@ function InputFilter() {
   );
 }
 
-export default InputFilter;
+export default FilterByName;

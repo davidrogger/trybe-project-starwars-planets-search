@@ -1,6 +1,6 @@
 import React from 'react';
 
-function InputSelect() {
+function FilterByNumericValues() {
   return (
     <select>
       <option>teste</option>
@@ -8,4 +8,4 @@ function InputSelect() {
   );
 }
 
-export default InputSelect;
+export default FilterByNumericValues;
