@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../context/StarwarsProvider';
+import setState from '../helpers/setState';
 
 const OPTIONS = [
   'population',
@@ -9,9 +11,15 @@ const OPTIONS = [
 ];
 
 function InputSelectColumn() {
+  const { filterByNumericValue, setFilterByNumericValue } = useContext(Context);
   return (
     <select
       data-testid="column-filter"
+      name="column"
+      value={ filterByNumericValue.column }
+      onChange={ ({ target }) => setState(
+        target, setFilterByNumericValue, filterByNumericValue,
+      ) }
     >
       { OPTIONS.map((option) => (
         <option
