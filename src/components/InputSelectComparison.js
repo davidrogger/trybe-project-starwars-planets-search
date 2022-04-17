@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../context/StarwarsProvider';
+import setState from '../helpers/setState';
 
 const OPTIONS = [
   'maior que',
@@ -7,9 +9,15 @@ const OPTIONS = [
 ];
 
 function InputSelectComparison() {
+  const { filterByNumericValue, setFilterByNumericValue } = useContext(Context);
   return (
     <select
       data-testid="comparison-filter"
+      name="comparison"
+      value={ filterByNumericValue.comparison }
+      onChange={ ({ target }) => setState(
+        target, setFilterByNumericValue, filterByNumericValue,
+      ) }
     >
       { OPTIONS.map((option) => (
         <option
