@@ -15,8 +15,9 @@ const InitialNumericValue = {
 function StarwarsProvider({ children }) {
   const [data, setData] = useState([]);
   const [filterByName, setFilterByName] = useState('');
-  const [filterResult, setfilterResult] = useState([]);
   const [filterByNumericValue, setFilterByNumericValue] = useState(InitialNumericValue);
+  const [filterResultNumeric, setfilterResultNumeric] = useState([]);
+  const [filterResult, setfilterResult] = useState([]);
 
   useEffect(() => {
     const getStarwarsPlanets = async () => {
@@ -45,6 +46,8 @@ function StarwarsProvider({ children }) {
     setFilterByName,
     filterByNumericValue,
     setFilterByNumericValue,
+    filterResultNumeric,
+    setfilterResultNumeric,
   };
 
   return (
