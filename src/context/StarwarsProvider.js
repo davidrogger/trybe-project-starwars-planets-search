@@ -17,7 +17,9 @@ function StarwarsProvider({ children }) {
   const [filterByName, setFilterByName] = useState('');
   const [filterByNumericValue, setFilterByNumericValue] = useState(InitialNumericValue);
   const [filterNumeric, setfilterNumeric] = useState([]);
+  const [filterNumericResult, setfilterNumericResult] = useState([]);
   const [filterResult, setfilterResult] = useState([]);
+  const [filterOptions, setfilterOptions] = useState([]);
 
   useEffect(() => {
     const getStarwarsPlanets = async () => {
@@ -40,9 +42,33 @@ function StarwarsProvider({ children }) {
     setfilterResult(result);
   }, [data, filterByName]);
 
-  // useEffect(() => {
+  function comparisonType(column, comparison, value) {
+    const dataNumber = Number(column);
+    const valueNumber = Number(value);
+    if (!dataNumber) return false;
+    switch (comparison) {
+    case 'maior que':
+      return dataNumber > valueNumber;
+    case 'menor que':
+      return dataNumber <= valueNumber;
+    default:
+      return dataNumber === valueNumber;
+    }
+  }
 
-  // }, [filterNumeric]);
+  useEffect(() => {
+    let filter = [];
+    filterNumeric.forEach(({ column, comparison, value }) => {
+      filter = filterResult
+        .filter((item) => comparisonType(item[column], comparison, value));
+    });
+    setfilterNumericResult(filter);
+  }, [filterNumeric, filterResult]);
+
+  useEffect(() => {
+    const alreadyFiltered = filterNumeric.map(({ column }) => column);
+    setfilterOptions(alreadyFiltered);
+  }, [filterNumeric]);
 
   const contextValue = {
     data,
@@ -52,6 +78,9 @@ function StarwarsProvider({ children }) {
     setFilterByNumericValue,
     filterNumeric,
     setfilterNumeric,
+    filterNumericResult,
+    setfilterNumericResult,
+    filterOptions,
   };
 
   return (
