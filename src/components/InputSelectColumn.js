@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Context } from '../context/StarwarsProvider';
 import setState from '../helpers/setState';
 
-const OPTIONS = [
+const allOptions = [
   'population',
   'orbital_period',
   'diameter',
@@ -11,7 +11,29 @@ const OPTIONS = [
 ];
 
 function InputSelectColumn() {
-  const { filterByNumericValue, setFilterByNumericValue } = useContext(Context);
+  const [options, setOptions] = useState([]);
+  const {
+    filterByNumericValue,
+    setFilterByNumericValue,
+    // filterOptions,
+  } = useContext(Context);
+
+  useEffect(() => {
+    setOptions(allOptions);
+  }, []);
+
+  // useEffect(() => {
+  //   const newOptions = allOptions
+  //     .filter((option) => filterOptions
+  //       .some((item) => {
+  //         console.log(option !== item);
+  //         return option !== item;
+  //       }));
+  //   console.log(allOptions);
+  //   console.log(filterOptions);
+  //   console.log(newOptions);
+  // }, [filterOptions]);
+
   return (
     <select
       data-testid="column-filter"
@@ -21,7 +43,7 @@ function InputSelectColumn() {
         target, setFilterByNumericValue,
       ) }
     >
-      { OPTIONS.map((option) => (
+      { options.map((option) => (
         <option
           key={ option }
           value={ option }
