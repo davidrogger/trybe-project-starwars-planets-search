@@ -1,9 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Context } from '../context/StarwarsProvider';
 import styles from '../styles/FilterPainel.module.css';
 
 function FilterByName() {
-  const { setFilterByName } = useContext(Context);
+  const { data, setFilterByName, filterByName, setfilterResult } = useContext(Context);
+  useEffect(() => {
+    const filterDisable = filterByName.length === 0;
+    const applyFilter = data
+      .filter(({ name }) => name
+        .toLowerCase()
+        .includes(filterByName));
+
+    const result = filterDisable ? data : applyFilter;
+
+    setfilterResult(result);
+  }, [data, filterByName, setfilterResult]);
+
   return (
     <input
       type="text"

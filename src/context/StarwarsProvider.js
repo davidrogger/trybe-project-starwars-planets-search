@@ -20,18 +20,6 @@ function StarwarsProvider({ children }) {
   const [filterResult, setfilterResult] = useState([]);
   const [filterOptions, setfilterOptions] = useState([]);
 
-  useEffect(() => {
-    const filterDisable = filterByName.length === 0;
-    const applyFilter = data
-      .filter(({ name }) => name
-        .toLowerCase()
-        .includes(filterByName));
-
-    const result = filterDisable ? data : applyFilter;
-
-    setfilterResult(result);
-  }, [data, filterByName]);
-
   function comparisonType(column, comparison, value) {
     const dataNumber = Number(column);
     const valueNumber = Number(value);
@@ -65,6 +53,7 @@ function StarwarsProvider({ children }) {
     setData,
     filterResult,
     setfilterResult,
+    filterByName,
     setFilterByName,
     filterByNumericValue,
     setFilterByNumericValue,
