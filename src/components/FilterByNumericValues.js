@@ -15,7 +15,7 @@ function FilterByNumericValues() {
         <InputSelectColumn />
         <InputSelectComparison />
         <InputValueFilter />
-        <FilterButton testId="value-filter" />
+        <FilterButton />
       </div>
       <div>
         <ul>
