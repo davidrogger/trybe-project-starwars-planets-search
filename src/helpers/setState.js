@@ -1,9 +1,9 @@
-function setState(target, callback, state) {
+function setState(target, callback) {
   const { name, value } = target;
-  callback({
-    ...state,
+  callback((prevState) => ({
+    ...prevState,
     [name]: value,
-  });
+  }));
 }
 
 export default setState;

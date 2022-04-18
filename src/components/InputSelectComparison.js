@@ -16,7 +16,7 @@ function InputSelectComparison() {
       name="comparison"
       value={ filterByNumericValue.comparison }
       onChange={ ({ target }) => setState(
-        target, setFilterByNumericValue, filterByNumericValue,
+        target, setFilterByNumericValue,
       ) }
     >
       { OPTIONS.map((option) => (

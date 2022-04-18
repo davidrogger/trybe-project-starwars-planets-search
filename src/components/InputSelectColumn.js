@@ -18,7 +18,7 @@ function InputSelectColumn() {
       name="column"
       value={ filterByNumericValue.column }
       onChange={ ({ target }) => setState(
-        target, setFilterByNumericValue, filterByNumericValue,
+        target, setFilterByNumericValue,
       ) }
     >
       { OPTIONS.map((option) => (
