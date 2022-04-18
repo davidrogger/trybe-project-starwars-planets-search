@@ -16,7 +16,7 @@ function StarwarsProvider({ children }) {
   const [data, setData] = useState([]);
   const [filterByName, setFilterByName] = useState('');
   const [filterByNumericValue, setFilterByNumericValue] = useState(InitialNumericValue);
-  const [filterResultNumeric, setfilterResultNumeric] = useState([]);
+  const [filterNumeric, setfilterNumeric] = useState([]);
   const [filterResult, setfilterResult] = useState([]);
 
   useEffect(() => {
@@ -40,14 +40,18 @@ function StarwarsProvider({ children }) {
     setfilterResult(result);
   }, [data, filterByName]);
 
+  // useEffect(() => {
+
+  // }, [filterNumeric]);
+
   const contextValue = {
     data,
     filterResult,
     setFilterByName,
     filterByNumericValue,
     setFilterByNumericValue,
-    filterResultNumeric,
-    setfilterResultNumeric,
+    filterNumeric,
+    setfilterNumeric,
   };
 
   return (

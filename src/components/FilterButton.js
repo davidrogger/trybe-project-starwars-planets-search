@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Context } from '../context/StarwarsProvider';
 
 function FilterButton({ testeId }) {
-  const { filterByNumericValue, setfilterResultNumeric } = useContext(Context);
+  const { filterByNumericValue, setfilterNumeric } = useContext(Context);
 
   function numericFilter() {
     const { column, comparison, value } = filterByNumericValue;
@@ -12,7 +12,7 @@ function FilterButton({ testeId }) {
     const id = `id${Math.random().toString(hexadecimal).slice(2)}`; // https://stackoverflow.com/questions/3231459/create-unique-id-with-javascript
     const newNumericFilter = { id, column, comparison, value };
 
-    setfilterResultNumeric((prevState) => ([
+    setfilterNumeric((prevState) => ([
       ...prevState,
       newNumericFilter,
     ]));

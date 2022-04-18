@@ -8,7 +8,7 @@ import styles from '../styles/FilterPainel.module.css';
 import NumericFilterCard from './NumericFilterCard';
 
 function FilterByNumericValues() {
-  const { filterResultNumeric } = useContext(Context);
+  const { filterNumeric } = useContext(Context);
   return (
     <div className={ styles.numericValues__container }>
       <div className={ styles.numericValues__input }>
@@ -19,7 +19,7 @@ function FilterByNumericValues() {
       </div>
       <div>
         <ul>
-          { filterResultNumeric.map(({ column, comparison, value, id }) => (
+          { filterNumeric.map(({ column, comparison, value, id }) => (
             <NumericFilterCard
               key={ id }
               id={ id }

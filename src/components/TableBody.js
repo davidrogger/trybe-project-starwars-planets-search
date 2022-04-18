@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Context } from '../context/StarwarsProvider';
 
 function TableBody() {
-  const { filterResult } = useContext(Context);
+  const { filterResult, filterNumeric } = useContext(Context);
 
   function filmes(name, filmeList) {
     return (
@@ -14,9 +14,12 @@ function TableBody() {
     );
   }
 
+  const filterNumericDisable = filterNumeric.length === 0;
+  const bodyDisplay = filterNumericDisable ? filterResult : 'logica não criada ainda';
+
   return (
     <tbody>
-      { filterResult.map(({
+      { bodyDisplay.map(({
         name,
         rotation_period: rotation,
         orbital_period: orbital,
