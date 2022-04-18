@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import getStarWarsAPI from '../services/starwarsAPI';
 
 const Context = createContext();
 
@@ -20,15 +19,6 @@ function StarwarsProvider({ children }) {
   const [filterNumericResult, setfilterNumericResult] = useState([]);
   const [filterResult, setfilterResult] = useState([]);
   const [filterOptions, setfilterOptions] = useState([]);
-
-  useEffect(() => {
-    const getStarwarsPlanets = async () => {
-      const { results } = await getStarWarsAPI('planets');
-      setData(results);
-      setfilterResult(results);
-    };
-    getStarwarsPlanets();
-  }, []);
 
   useEffect(() => {
     const filterDisable = filterByName.length === 0;
@@ -72,7 +62,9 @@ function StarwarsProvider({ children }) {
 
   const contextValue = {
     data,
+    setData,
     filterResult,
+    setfilterResult,
     setFilterByName,
     filterByNumericValue,
     setFilterByNumericValue,
