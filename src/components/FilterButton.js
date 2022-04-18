@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Context } from '../context/StarwarsProvider';
 
-function FilterButton({ testeId }) {
+function FilterButton() {
   const { filterByNumericValue, setfilterNumeric } = useContext(Context);
 
   function numericFilter() {
@@ -21,7 +21,7 @@ function FilterButton({ testeId }) {
   return (
     <button
       type="button"
-      data-testid={ testeId }
+      data-testid="button-filter"
       onClick={ numericFilter }
     >
       Filtrar
