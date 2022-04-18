@@ -1,6 +1,6 @@
 .painel__container {
   background-color: var(--main-color);
-  height: 100px;
+  min-height: 100px;
 }
 
 .painel__head {
@@ -23,11 +23,16 @@
 .numericValues__container {
   align-items: center;
   display: flex;
+  flex-direction: column;
   margin-top: 5px;
   width: 50%;
 }
 
-.numericValues__container * {
+.numericValues__input {
+  width: 100%;
+}
+
+.numericValues__input * {
   height: 100%;
   width: 25%;
 }
