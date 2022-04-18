@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useState } from 'react';
 import PropTypes from 'prop-types';
 
 const Context = createContext();
@@ -15,53 +15,26 @@ function StarwarsProvider({ children }) {
   const [data, setData] = useState([]);
   const [filterByName, setFilterByName] = useState('');
   const [filterByNumericValue, setFilterByNumericValue] = useState(InitialNumericValue);
-  const [filterNumeric, setfilterNumeric] = useState([]);
-  const [filterNumericResult, setfilterNumericResult] = useState([]);
-  const [filterResult, setfilterResult] = useState([]);
-  const [filterOptions, setfilterOptions] = useState([]);
-
-  function comparisonType(column, comparison, value) {
-    const dataNumber = Number(column);
-    const valueNumber = Number(value);
-    if (!dataNumber) return false;
-    switch (comparison) {
-    case 'maior que':
-      return dataNumber > valueNumber;
-    case 'menor que':
-      return dataNumber <= valueNumber;
-    default:
-      return dataNumber === valueNumber;
-    }
-  }
-
-  useEffect(() => {
-    let filter = [];
-    filterNumeric.forEach(({ column, comparison, value }) => {
-      filter = filterResult
-        .filter((item) => comparisonType(item[column], comparison, value));
-    });
-    setfilterNumericResult(filter);
-  }, [filterNumeric, filterResult]);
-
-  useEffect(() => {
-    const alreadyFiltered = filterNumeric.map(({ column }) => column);
-    setfilterOptions(alreadyFiltered);
-  }, [filterNumeric]);
+  const [filterNumeric, setFilterNumeric] = useState([]);
+  const [filterNumericResult, setFilterNumericResult] = useState([]);
+  const [filterResult, setFilterResult] = useState([]);
+  const [filterOptions, setFilterOptions] = useState([]);
 
   const contextValue = {
     data,
     setData,
     filterResult,
-    setfilterResult,
+    setFilterResult,
     filterByName,
     setFilterByName,
     filterByNumericValue,
     setFilterByNumericValue,
     filterNumeric,
-    setfilterNumeric,
+    setFilterNumeric,
     filterNumericResult,
-    setfilterNumericResult,
+    setFilterNumericResult,
     filterOptions,
+    setFilterOptions,
   };
 
   return (

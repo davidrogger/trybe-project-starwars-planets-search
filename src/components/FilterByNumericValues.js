@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Context } from '../context/StarwarsProvider';
 import FilterButton from './FilterButton';
 import InputSelectColumn from './InputSelectColumn';
@@ -8,7 +8,43 @@ import styles from '../styles/FilterPainel.module.css';
 import NumericFilterCard from './NumericFilterCard';
 
 function FilterByNumericValues() {
-  const { filterNumeric } = useContext(Context);
+  const {
+    filterNumeric,
+    filterResult,
+    setFilterNumericResult,
+    setFilterOptions,
+  } = useContext(Context);
+
+  function comparisonType(column, comparison, value) {
+    const dataNumber = Number(column);
+    const valueNumber = Number(value);
+    if (!dataNumber) return false;
+    switch (comparison) {
+    case 'maior que':
+      return dataNumber > valueNumber;
+    case 'menor que':
+      return dataNumber <= valueNumber;
+    default:
+      return dataNumber === valueNumber;
+    }
+  }
+
+  useEffect(() => {
+    let filter = [];
+    filterNumeric.forEach(({ column, comparison, value }) => {
+      filter = filterResult
+        .filter((item) => comparisonType(item[column], comparison, value));
+    });
+    setFilterNumericResult(filter);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filterNumeric, filterResult]);
+
+  useEffect(() => {
+    const alreadyFiltered = filterNumeric.map(({ column }) => column);
+    setFilterOptions(alreadyFiltered);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filterNumeric]);
+
   return (
     <div className={ styles.numericValues__container }>
       <div className={ styles.numericValues__input }>
