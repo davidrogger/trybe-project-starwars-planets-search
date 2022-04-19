@@ -19,6 +19,11 @@ const initialNumericValue = {
   value: '0',
 };
 
+const initialOrderValue = {
+  column: 'population',
+  sort: 'ASC',
+};
+
 function StarwarsProvider({ children }) {
   const [data, setData] = useState([]);
   const [filterByName, setFilterByName] = useState('');
@@ -28,6 +33,7 @@ function StarwarsProvider({ children }) {
   const [filterResult, setFilterResult] = useState([]);
   const [filterOptions, setFilterOptions] = useState([]);
   const [options, setOptions] = useState(initialOptions);
+  const [filterOrder, setFilterOrder] = useState(initialOrderValue);
 
   const contextValue = {
     data,
@@ -46,6 +52,8 @@ function StarwarsProvider({ children }) {
     setFilterOptions,
     options,
     setOptions,
+    filterOrder,
+    setFilterOrder,
   };
 
   return (
