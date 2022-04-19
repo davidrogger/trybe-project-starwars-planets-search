@@ -29,7 +29,7 @@ function InputSelectColumn() {
   useEffect(() => {
     if (filterNumeric.length !== 0) {
       const alreadyFiltered = filterNumeric.map((({ column }) => column));
-      const removeOptions = filterOptions
+      const removeOptions = initialOptions
         .filter((option) => alreadyFiltered
           .every((filtered) => filtered !== option));
       console.log(removeOptions);
