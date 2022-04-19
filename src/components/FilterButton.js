@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Context } from '../context/StarwarsProvider';
 
 function FilterButton() {
-  const { filterByNumericValue, setFilterNumeric } = useContext(Context);
+  const { filterByNumericValue, setFilterNumeric, filterOptions } = useContext(Context);
 
   function numericFilter() {
     const { column, comparison, value } = filterByNumericValue;
@@ -23,6 +23,7 @@ function FilterButton() {
       type="button"
       data-testid="button-filter"
       onClick={ numericFilter }
+      disabled={ filterOptions.length === 0 }
     >
       Filtrar
     </button>

@@ -1,8 +1,8 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Context } from '../context/StarwarsProvider';
 import setState from '../helpers/setState';
 
-const allOptions = [
+const initialOptions = [
   'population',
   'orbital_period',
   'diameter',
@@ -11,28 +11,36 @@ const allOptions = [
 ];
 
 function InputSelectColumn() {
-  const [options, setOptions] = useState([]);
   const {
+    filterNumeric,
     filterByNumericValue,
     setFilterByNumericValue,
-    // filterOptions,
+    filterOptions,
+    setFilterOptions,
   } = useContext(Context);
 
-  useEffect(() => {
-    setOptions(allOptions);
-  }, []);
+  function selectedOption(option) {
+    setFilterByNumericValue((prevState) => ({
+      ...prevState,
+      column: option,
+    }));
+  }
 
-  // useEffect(() => {
-  //   const newOptions = allOptions
-  //     .filter((option) => filterOptions
-  //       .some((item) => {
-  //         console.log(option !== item);
-  //         return option !== item;
-  //       }));
-  //   console.log(allOptions);
-  //   console.log(filterOptions);
-  //   console.log(newOptions);
-  // }, [filterOptions]);
+  useEffect(() => {
+    if (filterNumeric.length !== 0) {
+      const alreadyFiltered = filterNumeric.map((({ column }) => column));
+      const removeOptions = filterOptions
+        .filter((option) => alreadyFiltered
+          .every((filtered) => filtered !== option));
+      console.log(removeOptions);
+      setFilterOptions(removeOptions);
+      selectedOption(removeOptions[0]);
+    } else {
+      setFilterOptions(initialOptions);
+      selectedOption(initialOptions[0]);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filterNumeric]);
 
   return (
     <select
@@ -43,7 +51,7 @@ function InputSelectColumn() {
         target, setFilterByNumericValue,
       ) }
     >
-      { options.map((option) => (
+      { filterOptions.map((option) => (
         <option
           key={ option }
           value={ option }

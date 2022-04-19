@@ -5,8 +5,8 @@ const Context = createContext();
 
 const { Provider } = Context;
 
-const InitialNumericValue = {
-  column: 'population',
+const initialNumericValue = {
+  column: '',
   comparison: 'maior que',
   value: '0',
 };
@@ -14,7 +14,7 @@ const InitialNumericValue = {
 function StarwarsProvider({ children }) {
   const [data, setData] = useState([]);
   const [filterByName, setFilterByName] = useState('');
-  const [filterByNumericValue, setFilterByNumericValue] = useState(InitialNumericValue);
+  const [filterByNumericValue, setFilterByNumericValue] = useState(initialNumericValue);
   const [filterNumeric, setFilterNumeric] = useState([]);
   const [filterNumericResult, setFilterNumericResult] = useState([]);
   const [filterResult, setFilterResult] = useState([]);

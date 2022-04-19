@@ -12,7 +12,6 @@ function FilterByNumericValues() {
     filterNumeric,
     filterResult,
     setFilterNumericResult,
-    setFilterOptions,
   } = useContext(Context);
 
   function comparisonType(column, comparison, value) {
@@ -38,12 +37,6 @@ function FilterByNumericValues() {
     setFilterNumericResult(filter);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filterNumeric, filterResult]);
-
-  useEffect(() => {
-    const alreadyFiltered = filterNumeric.map(({ column }) => column);
-    setFilterOptions(alreadyFiltered);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filterNumeric]);
 
   return (
     <div className={ styles.numericValues__container }>
