@@ -20,11 +20,10 @@
   text-align: center;
 }
 
-.numericValues__container {
+.numericValues__container, .filterOrder__container {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: 5px;
   width: 50%;
 }
 
@@ -37,3 +36,7 @@
   width: 25%;
 }
 
+.advancedFilters__container {
+  display: flex;
+  margin-top: 10px;
+}
