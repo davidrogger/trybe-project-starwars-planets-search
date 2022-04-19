@@ -21,7 +21,7 @@ const initialNumericValue = {
 
 const initialOrderValue = {
   column: 'population',
-  sort: '',
+  sort: 'asc',
 };
 
 function StarwarsProvider({ children }) {
