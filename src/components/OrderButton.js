@@ -14,14 +14,12 @@ function OrderButton() {
     const numberB = Number(columnB);
     const backIndex = -1;
     const nextIndex = 1;
+    if (!numberA) return nextIndex;
+    if (!numberB) return backIndex;
     switch (sort) {
     case 'asc':
-      if (!numberA) return nextIndex;
-      if (!numberB) return backIndex;
       return numberA - numberB;
     default:
-      if (!numberB) return nextIndex;
-      if (!numberA) return backIndex;
       return numberB - numberA;
     }
   }
@@ -40,7 +38,7 @@ function OrderButton() {
   return (
     <button
       type="button"
-      date-testid="column-sort-button"
+      data-testid="column-sort-button"
       onClick={ orderDisplay }
     >
       Ordenar
