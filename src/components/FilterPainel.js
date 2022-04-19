@@ -11,7 +11,6 @@ function FilterPainel() {
     <div className={ styles.painel__container }>
       <FilterByName />
       <FilterByNumericValues />
-
       <button
         type="button"
         data-testid="button-remove-filters"

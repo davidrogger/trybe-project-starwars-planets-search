@@ -5,6 +5,14 @@ const Context = createContext();
 
 const { Provider } = Context;
 
+const initialOptions = [
+  'population',
+  'orbital_period',
+  'diameter',
+  'rotation_period',
+  'surface_water',
+];
+
 const initialNumericValue = {
   column: '',
   comparison: 'maior que',
@@ -19,6 +27,7 @@ function StarwarsProvider({ children }) {
   const [filterNumericResult, setFilterNumericResult] = useState([]);
   const [filterResult, setFilterResult] = useState([]);
   const [filterOptions, setFilterOptions] = useState([]);
+  const [options, setOptions] = useState(initialOptions);
 
   const contextValue = {
     data,
@@ -35,6 +44,8 @@ function StarwarsProvider({ children }) {
     setFilterNumericResult,
     filterOptions,
     setFilterOptions,
+    options,
+    setOptions,
   };
 
   return (
