@@ -8,11 +8,23 @@ import { Context } from '../context/StarwarsProvider';
 
 function Table() {
   const { setData, setFilterResult } = useContext(Context);
+  // https://stackoverflow.com/questions/5285995/how-do-you-sort-letters-in-javascript-with-capital-and-lowercase-letters-combin
+  function alphabeticNameOrder(array) {
+    return array.sort((a, b) => {
+      const backIndex = -1;
+      const nextIndex = 1;
+      if (a.name > b.name) return nextIndex;
+      if (a.name < b.name) return backIndex;
+      return 0;
+    });
+  }
+
   useEffect(() => {
     const getStarwarsPlanets = async () => {
       const { results } = await getStarWarsAPI('planets');
-      setData(results);
-      setFilterResult(results);
+      const orderingResults = alphabeticNameOrder(results);
+      setData(orderingResults);
+      setFilterResult(orderingResults);
     };
     getStarwarsPlanets();
   // eslint-disable-next-line react-hooks/exhaustive-deps
