@@ -12,7 +12,7 @@ function InputRadioOrder() {
       { radiosOptions.map((radio) => (
         <label htmlFor={ radio } key={ radio }>
           <input
-            data-test-id={ `column-sort-input-${radio}` }
+            data-testid={ `column-sort-input-${radio}` }
             type="radio"
             id={ radio }
             name="sort"
