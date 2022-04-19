@@ -24,7 +24,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 40%;
 }
 
 .numericValues__input {
@@ -39,4 +39,8 @@
 .advancedFilters__container {
   display: flex;
   margin-top: 10px;
+}
+
+.filterOrder__container * {
+  width: 33%;
 }
