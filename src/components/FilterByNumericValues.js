@@ -22,16 +22,16 @@ function FilterByNumericValues() {
     case 'maior que':
       return dataNumber > valueNumber;
     case 'menor que':
-      return dataNumber <= valueNumber;
+      return dataNumber <= valueNumber; // tentando entender pq a necessidade do = no menor para passar no teste
     default:
       return dataNumber === valueNumber;
     }
   }
 
   useEffect(() => {
-    let filter = [];
+    let filter = [...filterResult];
     filterNumeric.forEach(({ column, comparison, value }) => {
-      filter = filterResult
+      filter = filter
         .filter((item) => comparisonType(item[column], comparison, value));
     });
     setFilterNumericResult(filter);

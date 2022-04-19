@@ -32,7 +32,6 @@ function InputSelectColumn() {
       const removeOptions = initialOptions
         .filter((option) => alreadyFiltered
           .every((filtered) => filtered !== option));
-      console.log(removeOptions);
       setFilterOptions(removeOptions);
       selectedOption(removeOptions[0]);
     } else {
