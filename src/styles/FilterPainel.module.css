@@ -21,10 +21,18 @@
 }
 
 .numericValues__container, .filterOrder__container {
-  align-items: center;
   display: flex;
-  flex-direction: column;
+  margin: 5px;
   width: 40%;
+}
+
+.numericValues__container {
+  align-items: center;
+  flex-direction: column;
+}
+
+.filterOrder__container {
+  align-items: flex-start;
 }
 
 .numericValues__input {
@@ -43,4 +51,12 @@
 
 .filterOrder__container * {
   width: 33%;
+}
+
+.inputRadio__container {
+  font-size: 0.8em;
+}
+
+.inputRadio__container label {
+  vertical-align: middle;
 }
