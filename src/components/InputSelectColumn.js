@@ -36,34 +36,15 @@ function InputSelectColumn() {
   }, [filterNumeric]);
 
   return (
-    <>
-      {/* <select
-        data-testid="column-filter"
-        name="column"
-        value={ filterByNumericValue.column }
-        onChange={ ({ target }) => setState(
-          target, setFilterByNumericValue,
-        ) }
-      >
-        { filterOptions.map((option) => (
-          <option
-            key={ option }
-            value={ option }
-          >
-            { option }
-          </option>
-        )) }
-      </select> */}
-      <InputSelect
-        testeId="column-filter"
-        name="column"
-        value={ filterByNumericValue.column }
-        onChange={ ({ target }) => setState(
-          target, setFilterByNumericValue,
-        ) }
-        options={ filterOptions }
-      />
-    </>
+    <InputSelect
+      testeId="column-filter"
+      name="column"
+      value={ filterByNumericValue.column }
+      onChange={ ({ target }) => setState(
+        target, setFilterByNumericValue,
+      ) }
+      options={ filterOptions }
+    />
   );
 }
 
