@@ -34,7 +34,7 @@ function TableBody() {
         url,
       }) => (
         <tr key={ name }>
-          <td>{ name }</td>
+          <td data-testid="planet-name">{ name }</td>
           <td>{ rotation }</td>
           <td>{ orbital }</td>
           <td>{ diameter }</td>
