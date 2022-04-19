@@ -9,12 +9,9 @@ function FilterPainel() {
 
   return (
     <div className={ styles.painel__container }>
-      <div className={ styles.painel__head }>
-        <FilterByName />
-      </div>
-      <div>
-        <FilterByNumericValues />
-      </div>
+      <FilterByName />
+      <FilterByNumericValues />
+
       <button
         type="button"
         data-testid="button-remove-filters"

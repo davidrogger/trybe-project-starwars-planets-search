@@ -17,13 +17,15 @@ function FilterByName() {
   }, [data, filterByName, setFilterResult]);
 
   return (
-    <input
-      type="text"
-      data-testid="name-filter"
-      className={ styles.input__filter }
-      placeholder="Filter by name"
-      onChange={ ({ target }) => setFilterByName(target.value) }
-    />
+    <div className={ styles.painel__head }>
+      <input
+        type="text"
+        data-testid="name-filter"
+        className={ styles.input__filter }
+        placeholder="Filter by name"
+        onChange={ ({ target }) => setFilterByName(target.value) }
+      />
+    </div>
   );
 }
 
