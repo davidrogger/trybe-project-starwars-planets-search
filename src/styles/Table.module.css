@@ -1,10 +1,41 @@
 .table__container {
   background-color: var(--main-color);
   font-size: 0.875rem;
+  text-align: center;
   width: 100%;
+}
+
+.table__container li {
+  list-style-type: none;
+  text-align: start;
 }
 
 .table__container thead {
   background-color: black;
   height: 50px;
+}
+
+.table__container td {
+  max-width: 180px;
+  padding: 10px;
+}
+
+.side__scroll {
+  overflow: auto;
+  white-space: nowrap;
+  width: 50px;
+}
+
+.side__scroll::-webkit-scrollbar {
+  width: 12px;
+}
+
+.side__scroll::-webkit-scrollbar-track {
+  background: var(--main-color);
+}
+
+.side__scroll::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 20px;
 }

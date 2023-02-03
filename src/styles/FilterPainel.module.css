@@ -41,7 +41,8 @@
 
 .numericValues__input * {
   height: 100%;
-  width: 25%;
+  margin: 5px;
+  width: 23%;
 }
 
 .advancedFilters__container {
@@ -59,4 +60,13 @@
 
 .inputRadio__container label {
   vertical-align: middle;
+}
+
+.painel__container button {
+  background-color: var(--main-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  color: var(--accent-color);
+  height: 50px;
+  padding: 5px;
 }
