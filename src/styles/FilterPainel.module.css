@@ -31,6 +31,12 @@
   width: 20%;
 }
 
+.removeBtn_container button {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
 .numericValues__container {
   align-items: flex-end;
   flex-flow: nowrap;
@@ -61,11 +67,12 @@
 .advancedFilters__container {
   display: flex;
   margin-top: 10px;
+  padding: 5px;
 }
 
 .filterOrder__container * {
   margin-right: 5px;
-  width: 30%;
+  width: 33%;
 }
 
 .inputRadio__container {
