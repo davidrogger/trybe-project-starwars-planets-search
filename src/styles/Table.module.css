@@ -1,6 +1,14 @@
+.search__container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 90%;
+}
+
 .table__container {
   background-color: var(--main-color);
   font-size: 0.875rem;
+  overflow-x: scroll;
   text-align: center;
   width: 100%;
 }

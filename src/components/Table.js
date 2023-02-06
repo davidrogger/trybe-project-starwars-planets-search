@@ -31,12 +31,14 @@ function Table() {
   }, []);
 
   return (
-    <div>
+    <div className={ styles.search__container }>
       <FilterPainel />
-      <table className={ styles.table__container }>
-        <TableHeader />
-        <TableBody />
-      </table>
+      <div className={ styles.table__container }>
+        <table>
+          <TableHeader />
+          <TableBody />
+        </table>
+      </div>
     </div>
   );
 }
