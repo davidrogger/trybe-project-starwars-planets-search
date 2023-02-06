@@ -1,5 +1,6 @@
 .painel__container {
   background-color: var(--main-color);
+  border-radius: 10px;
   min-height: 100px;
 }
 

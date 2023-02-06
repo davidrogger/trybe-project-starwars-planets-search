@@ -44,10 +44,10 @@ function TableBody() {
           <td>{ terrain }</td>
           <td>{ surfaceWater }</td>
           <td>{ population }</td>
-          <td className={ styles.side__scroll }>{ movies(name, films) }</td>
+          <td className={ styles.hyperlink_content }>{ movies(name, films) }</td>
           <td>{ created }</td>
           <td>{ edited }</td>
-          <td className={ styles.side__scroll }>{ url }</td>
+          <td className={ styles.hyperlink_content }>{ url }</td>
         </tr>
       )) }
     </tbody>
