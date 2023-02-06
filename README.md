@@ -22,6 +22,7 @@
 # Tecnologias e ferramentas usadas 🛠
 
 ![React.js](https://img.shields.io/badge/-React.js-61DAFB?style=flat-square&logo=react&logoColor=ffffff)
+![Context API](https://img.shields.io/badge/-ContextAPI-61DAFB?style=flat-square&logo=react&logoColor=ffffff)
 
 
 # Desafios
