@@ -23,12 +23,16 @@
 
 .numericValues__container, .filterOrder__container {
   display: flex;
-  margin: 5px;
-  width: 30%;
+  width: 40%;
+}
+
+.removeBtn_container {
+  width: 20%;
 }
 
 .numericValues__container {
-  align-items: center;
+  align-items: flex-end;
+  flex-flow: nowrap;
   flex-direction: column;
 }
 
@@ -40,10 +44,18 @@
   width: 100%;
 }
 
-.numericValues__input * {
-  height: 100%;
-  margin: 5px;
-  width: 23%;
+.numericValues__container select, .numericValues__container input {
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+  margin-right: 3px;
+  padding: 5px;
+  text-align: right;
+  width: 24%;
+}
+
+.numericValues__container button {
+  width: 24%;
 }
 
 .advancedFilters__container {

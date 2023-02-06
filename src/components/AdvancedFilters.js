@@ -14,13 +14,15 @@ function AdvancedFilters() {
     <div className={ styles.advancedFilters__container }>
       <FilterByNumericValues />
       <FilterOrder />
-      <button
-        type="button"
-        data-testid="button-remove-filters"
-        onClick={ () => setFilterNumeric([]) }
-      >
-        Remover todas filtragens
-      </button>
+      <div className={ styles.removeBtn_container }>
+        <button
+          type="button"
+          data-testid="button-remove-filters"
+          onClick={ () => setFilterNumeric([]) }
+        >
+          Remover todas filtragens
+        </button>
+      </div>
     </div>
   );
 }
