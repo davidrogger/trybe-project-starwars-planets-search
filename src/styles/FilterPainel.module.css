@@ -1,3 +1,4 @@
+/* stylelint-disable selector-list-comma-space-after */
 .painel__container {
   background-color: var(--main-color);
   border-radius: 10px;
@@ -36,24 +37,23 @@
   flex-direction: column;
 }
 
-.filterOrder__container {
-  align-items: flex-start;
-}
-
 .numericValues__input {
   width: 100%;
 }
 
-.numericValues__container select, .numericValues__container input {
+.numericValues__container select,
+.numericValues__container input,
+.filterOrder__container select {
   border: none;
   border-radius: 10px;
   height: 50px;
   margin-right: 3px;
   padding: 5px;
-  text-align: right;
-  width: 24%;
+  text-align: center;
 }
 
+.numericValues__container select,
+.numericValues__container input,
 .numericValues__container button {
   width: 24%;
 }
@@ -64,15 +64,28 @@
 }
 
 .filterOrder__container * {
-  width: 33%;
+  margin-right: 5px;
+  width: 30%;
 }
 
 .inputRadio__container {
+  display: flex;
+  flex-direction: column;
   font-size: 0.8em;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.inputRadio__container label {
-  vertical-align: middle;
+.inputRadio__container input {
+  background: yellow;
+  margin-right: 5px;
+  width: 15px;
+}
+
+.inputRadio__container label, .inputRadio__container input {
+  cursor: pointer;
 }
 
 .painel__container button {
