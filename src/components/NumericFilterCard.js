@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { Trash } from 'phosphor-react';
 import { Context } from '../context/StarwarsProvider';
+
+import styles from '../styles/FilterPainel.module.css';
 
 function NumericFilterCard({ column, comparison, value, id }) {
   const { filterNumeric, setFilterNumeric } = useContext(Context);
@@ -13,13 +16,16 @@ function NumericFilterCard({ column, comparison, value, id }) {
   }
 
   return (
-    <li data-testid="filter">
+    <li
+      className={ styles.filter__applied }
+      data-testid="filter"
+    >
       {`Coluna ${column} ${comparison} que ${value}.`}
       <button
         type="button"
         onClick={ () => removeFilter(id) }
       >
-        X
+        <Trash />
       </button>
     </li>
   );

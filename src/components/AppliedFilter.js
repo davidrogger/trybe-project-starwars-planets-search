@@ -3,6 +3,8 @@ import { Context } from '../context/StarwarsProvider';
 
 import NumericFilterCard from './NumericFilterCard';
 
+import styles from '../styles/FilterPainel.module.css';
+
 function AppliedFilters() {
   const {
     filterNumeric,
@@ -10,7 +12,9 @@ function AppliedFilters() {
 
   return (
     <div>
-      <ul>
+      <ul
+        className={ styles.applied_filters_container }
+      >
         { filterNumeric.map(({ column, comparison, value, id }) => (
           <NumericFilterCard
             key={ id }
