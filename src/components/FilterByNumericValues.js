@@ -3,7 +3,6 @@ import { Context } from '../context/StarwarsProvider';
 
 import styles from '../styles/FilterPainel.module.css';
 
-import AppliedFilters from './AppliedFilter';
 import FilterColumnInputs from './FilterColumnInputs';
 
 function FilterByNumericValues() {
@@ -40,7 +39,6 @@ function FilterByNumericValues() {
   return (
     <div className={ styles.numericValues__container }>
       <FilterColumnInputs />
-      <AppliedFilters />
     </div>
   );
 }
