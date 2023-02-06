@@ -2,7 +2,8 @@
 
 ## Seção: `Context API e React Hooks`
 
-- lore
+- Quando o react foi lançado, componentes funcionais eram limitados. Não sendo possivel o uso de estados e nem mesmo ciclo de vida. A unica forma era usando componentes de classe, mas em sua versão 16.8 foi lançado hooks, tornando isso possivel de forma mais simples dentro dos componentes funcionais.
+- Outra forma de evitar o prop drilling para compartilha o estado de forma nativa no react é com Context API, fazendo com que o componente que precisa da informação acesso ela de forma direta.
 #
 <div align="center">
   <a href="https://davidrogger.github.io/trybe-project-trybewallet">
