@@ -27,11 +27,11 @@
 
 # Desafios
 
-- lore
+- O uso de useEffect foi bem simples, os desafios foram entender algumas exigencias dos requisitos e do linter fornecido, muitas vezes era necessário montar uma estrutura monitorando alguma função, que não necessáriamente era lógico para mim, mas era um bom hábito exigido.
 
 # Conclusão
 
-- lore
+- Pela primeira experiencia com componentes funcionas, da uma impressão que context API é muito mais simples e fácil que o Redux, mas em projetos futuros usei o Redux com react funcional, e é ele que fez toda diferença com sua simplicidade, também tem o fator que aprendi a usar react com classes, sem ter nenhuma noção com POO, ter essa noção ajudaria muito no aprendizado.
 
 </details>
 
