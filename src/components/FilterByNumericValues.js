@@ -5,7 +5,7 @@ import InputSelectColumn from './InputSelectColumn';
 import InputSelectComparison from './InputSelectComparison';
 import InputValueFilter from './InputValueFilter';
 import styles from '../styles/FilterPainel.module.css';
-import NumericFilterCard from './NumericFilterCard';
+import AppliedFilters from './AppliedFilter';
 
 function FilterByNumericValues() {
   const {
@@ -46,19 +46,7 @@ function FilterByNumericValues() {
         <InputValueFilter />
         <FilterButton />
       </div>
-      <div>
-        <ul>
-          { filterNumeric.map(({ column, comparison, value, id }) => (
-            <NumericFilterCard
-              key={ id }
-              id={ id }
-              column={ column }
-              comparison={ comparison }
-              value={ value }
-            />
-          ))}
-        </ul>
-      </div>
+      <AppliedFilters />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 .painel__container {
   background-color: var(--main-color);
   border-radius: 10px;
-  min-height: 100px;
+  padding-bottom: 20px;
 }
 
 .painel__head {
@@ -24,7 +24,7 @@
 .numericValues__container, .filterOrder__container {
   display: flex;
   margin: 5px;
-  width: 40%;
+  width: 30%;
 }
 
 .numericValues__container {
