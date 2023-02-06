@@ -46,7 +46,13 @@
 ### Requisitos
 *Nome* | *Avaliação*
 --- | :---:
-1 - lore| :heavy_check_mark:
+1 - Faça uma requisição para o endpoint `/planets` da API de Star Wars e preencha uma tabela com os dados retornados, com exceção dos da coluna `residents` | :heavy_check_mark:
+2 - Filtre a tabela através de um texto, inserido num *campo de texto*, exibindo somente os planetas cujos nomes incluam o texto digitado | :heavy_check_mark:
+3 - Crie um filtro para valores numéricos | :heavy_check_mark:
+4 - Implemente múltiplos filtros numéricos | :heavy_check_mark:
+5 - Não utilize filtros repetidos | :heavy_check_mark:
+6 - Apague um filtro de valor numérico ao clicar no ícone de X de um dos filtros e apague todas filtragens numéricas simultaneamente ao clicar em outro botão de Remover todas filtragens | :heavy_check_mark:
+7 - Ordene as colunas de forma ascendente ou descendente | :heavy_check_mark:
 
 
 </details>
