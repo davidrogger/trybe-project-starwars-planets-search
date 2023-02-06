@@ -17,7 +17,7 @@
 #
 ## Projeto: `Starwars Planets Search`
 
-- lore
+- Tabela de filtro de planetas do universo Starwars, onde é possivel criar diversos filtros, por nome, quantidade de campo de forma descendente e crescente.
 
 # Tecnologias e ferramentas usadas 🛠
 
