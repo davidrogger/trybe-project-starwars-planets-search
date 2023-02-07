@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { Context } from '../context/StarwarsProvider';
+import styles from '../styles/Table.module.css';
 
 function TableBody() {
   const { filterResult, filterNumericResult, filterNumeric } = useContext(Context);
 
-  function filmes(name, filmeList) {
+  function movies(name, filmeList) {
     return (
       <ul>
         {filmeList.map((film, index) => (
@@ -43,10 +44,10 @@ function TableBody() {
           <td>{ terrain }</td>
           <td>{ surfaceWater }</td>
           <td>{ population }</td>
-          <td>{ filmes(name, films) }</td>
+          <td className={ styles.hyperlink_content }>{ movies(name, films) }</td>
           <td>{ created }</td>
           <td>{ edited }</td>
-          <td>{ url }</td>
+          <td className={ styles.hyperlink_content }>{ url }</td>
         </tr>
       )) }
     </tbody>

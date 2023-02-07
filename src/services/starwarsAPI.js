@@ -1,9 +1,13 @@
-const URL = 'https://swapi-trybe.herokuapp.com/api/';
+import starWarsPlanets from '../testData';
 
-const getStarWarsAPI = async (endpoint) => {
-  const response = await fetch(`${URL}${endpoint}`);
-  const data = await response.json();
-  return data;
-};
+// const URL = 'https://swapi-trybe.herokuapp.com/api/';
 
-export default getStarWarsAPI;
+// export const getStarWarsAPI = async (endpoint) => {
+//   const response = await fetch(`${URL}${endpoint}`);
+//   const data = await response.json();
+//   return data;
+// };
+
+const getStarWarsData = async () => starWarsPlanets;
+
+export default getStarWarsData;

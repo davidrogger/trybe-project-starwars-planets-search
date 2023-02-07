@@ -1,11 +1,13 @@
 {
   "name": "sd-0x-project-react-context-hooks-starwars-datatable-filters",
   "version": "0.1.0",
+  "homepage": "https://davidrogger.github.io/trybe-project-starwars-planets-search",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "phosphor-react": "^1.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1"
@@ -16,6 +18,8 @@
     ]
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -43,6 +47,8 @@
     "@sheerun/mutationobserver-shim": "0.3.3",
     "eslint": "6.8.0",
     "eslint-config-trybe-frontend": "1.2.3",
+    "gh-pages": "^5.0.0",
+    "react-error-overlay": "^6.0.9",
     "stylelint": "13.8.0",
     "stylelint-order": "4.1.0"
   }

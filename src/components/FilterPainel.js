@@ -1,27 +1,14 @@
-import React, { useContext } from 'react';
-import { Context } from '../context/StarwarsProvider';
+import React from 'react';
 import styles from '../styles/FilterPainel.module.css';
 import FilterByName from './FilterByName';
-import FilterByNumericValues from './FilterByNumericValues';
-import FilterOrder from './FilterOrder';
+
+import AdvancedFilters from './AdvancedFilters';
 
 function FilterPainel() {
-  const { setFilterNumeric } = useContext(Context);
-
   return (
     <div className={ styles.painel__container }>
       <FilterByName />
-      <div className={ styles.advancedFilters__container }>
-        <FilterByNumericValues />
-        <FilterOrder />
-        <button
-          type="button"
-          data-testid="button-remove-filters"
-          onClick={ () => setFilterNumeric([]) }
-        >
-          Remover todas filtragens
-        </button>
-      </div>
+      <AdvancedFilters />
     </div>
   );
 }
