@@ -31,7 +31,7 @@
 
 # Conclusão
 
-- Pela primeira experiência com componentes funcionas, tive uma impressão que context API é muito mais simples e fácil que o Redux, mas em projetos futuros usei o Redux com react funcional, e é ele que fez toda diferença com sua simplicidade, também tem o fator que aprendi a usar react com classes, sem ter nenhuma noção com POO, ter essa noção ajudaria muito no aprendizado.
+- Pela primeira experiência com componentes funcionais, tive uma impressão que context API é muito mais simples e fácil que o Redux, mas em projetos futuros usei o Redux com react funcional, e é ele que fez toda diferença com sua simplicidade, também tem o fator que aprendi a usar react com classes, sem ter nenhuma noção com POO, ter essa noção ajudaria muito no aprendizado.
 
 </details>
 
