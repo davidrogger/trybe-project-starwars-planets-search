@@ -6,7 +6,7 @@
 - Outra forma de evitar o prop drilling para compartilha o estado de forma nativa no react é com Context API, fazendo com que o componente que precisa da informação acesso ela de forma direta.
 #
 <div align="center">
-  <a href="https://davidrogger.github.io/trybe-project-trybewallet">
+  <a href="https://davidrogger.github.io/trybe-project-starwars-planets-search">
     <img width="30%" src="./readme-imgs/project_starwars_planets_top.webp">
     <img width="30%" src="./readme-imgs/project_starwars_planets_mid.webp">
     <img width="30%" src="./readme-imgs/project_starwars_planets_bottom.webp">
