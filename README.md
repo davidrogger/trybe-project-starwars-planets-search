@@ -65,7 +65,7 @@
   </summary>
 
   - [x] - ~~Criar aplicação com base nos requisitos da trybe.~~ ![data](https://badgen.net/badge/delivery/19-04-2022/green)
-  - [x] - Revisar Estilo dos elementos. ![data](https://badgen.net/badge/done/07-02-2023/green)
+  - [x] - Revisar Estilo dos elementos. ![data](https://badgen.net/badge/delivery/07-02-2023/green)
   - [ ] - Desenvolver testes automatizados.
   - [ ] - Adaptar elementos da aplicação para mobile.
 
