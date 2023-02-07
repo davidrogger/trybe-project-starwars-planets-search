@@ -9,14 +9,18 @@ import TableHeader from './TableHeader';
 
 import getStarWarsAPI from '../services/starwarsAPI';
 import alphabeticNameOrder from '../helpers/alphabeticNameOrder';
+import formatColumnsName from '../helpers/formatColumnsName';
 
 function Table() {
-  const { setData, setFilterResult } = useContext(Context);
+  const { setData, setFilterResult, setColumnTitles } = useContext(Context);
 
   useEffect(() => {
     const getStarwarsPlanets = async () => {
       const { results } = await getStarWarsAPI('planets');
       const orderingResults = alphabeticNameOrder(results);
+      const tableColumnsName = Object.keys(results[0]);
+      const namesFormatted = formatColumnsName(tableColumnsName);
+      setColumnTitles(namesFormatted);
       setData(orderingResults);
       setFilterResult(orderingResults);
     };

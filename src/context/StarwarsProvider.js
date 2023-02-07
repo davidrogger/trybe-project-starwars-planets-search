@@ -34,6 +34,7 @@ function StarwarsProvider({ children }) {
   const [filterOptions, setFilterOptions] = useState([]);
   const [options, setOptions] = useState(initialOptions);
   const [filterOrder, setFilterOrder] = useState(initialOrderValue);
+  const [columnTitles, setColumnTitles] = useState([]);
 
   const contextValue = {
     data,
@@ -54,6 +55,8 @@ function StarwarsProvider({ children }) {
     setOptions,
     filterOrder,
     setFilterOrder,
+    columnTitles,
+    setColumnTitles,
   };
 
   return (
