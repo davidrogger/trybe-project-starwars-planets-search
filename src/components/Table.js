@@ -1,23 +1,17 @@
 import React, { useContext, useEffect } from 'react';
+import { Context } from '../context/StarwarsProvider';
+
 import styles from '../styles/Table.module.css';
+
 import FilterPainel from './FilterPainel';
 import TableBody from './TableBody';
 import TableHeader from './TableHeader';
+
 import getStarWarsAPI from '../services/starwarsAPI';
-import { Context } from '../context/StarwarsProvider';
+import alphabeticNameOrder from '../helpers/alphabeticNameOrder';
 
 function Table() {
   const { setData, setFilterResult } = useContext(Context);
-  // https://stackoverflow.com/questions/5285995/how-do-you-sort-letters-in-javascript-with-capital-and-lowercase-letters-combin
-  function alphabeticNameOrder(array) {
-    return array.sort((a, b) => {
-      const backIndex = -1;
-      const nextIndex = 1;
-      if (a.name > b.name) return nextIndex;
-      if (a.name < b.name) return backIndex;
-      return 0;
-    });
-  }
 
   useEffect(() => {
     const getStarwarsPlanets = async () => {
